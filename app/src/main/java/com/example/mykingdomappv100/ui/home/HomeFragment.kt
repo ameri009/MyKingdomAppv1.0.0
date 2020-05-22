@@ -1,5 +1,6 @@
 package com.example.mykingdomappv100.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.mykingdomappv100.R
+import com.example.mykingdomappv100.VideoActivity
+import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class HomeFragment : Fragment() {
 
@@ -25,6 +28,15 @@ class HomeFragment : Fragment() {
         val textView: TextView = root.findViewById(R.id.text_home)
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
+        })
+        //Button in Home
+        root.videoButton.setOnClickListener(View.OnClickListener {
+            @Override
+            fun onClick(view: View) {
+                println("YEEESSSSS")
+                val intent = Intent(context, VideoActivity::class.java)
+                startActivity(intent)
+            }
         })
         return root
     }

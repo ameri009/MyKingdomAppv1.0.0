@@ -20,7 +20,7 @@ class VideoActivity : Activity() {
     private lateinit var vidView:VideoView
 
     //URL of channel(s)
-    private val videoURL:String = "https://youtu.be/5qap5aO4i9A"
+    private val videoURL:String = "https://law.duke.edu/cspd/contest/videos/Framed-Contest_Documentaries-and-You.mp4"
 
 
     //Add Progressbar!

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mykingdomappv100">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -24,8 +25,9 @@
 
         <activity
             android:name=".VideoActivity"
-            android:screenOrientation="fullSensor"
-            android:usesCleartextTraffic="true">
+            android:screenOrientation="sensorLandscape"
+            android:usesCleartextTraffic="true"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />

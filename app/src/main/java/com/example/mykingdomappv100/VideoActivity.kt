@@ -19,7 +19,7 @@ class VideoActivity : Activity() {
     //Initializing videoView
     private lateinit var vidView:VideoView
 
-    //URL of channel(s):
+    //URL of channel(s): Testing URL
     private val videoURL:String = "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
 
     //Add Progressbar!

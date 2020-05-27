@@ -20,7 +20,7 @@ class VideoActivity : Activity() {
     private lateinit var vidView:VideoView
 
     //URL of channel(s):
-    private val videoURL:String = "https://www.radiantmediaplayer.com/media/bbb-360p.mp4"
+    private val videoURL:String = "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
 
     //Add Progressbar!
 

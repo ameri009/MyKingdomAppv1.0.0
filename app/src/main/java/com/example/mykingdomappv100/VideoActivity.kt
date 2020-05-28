@@ -17,9 +17,10 @@ import com.google.android.exoplayer2.util.Util
 
 class VideoActivity : Activity() {
 
-    //Initializing the view for the video
+    //Initializing the view for the video and video
     //private lateinit var vidView:VideoView~
     private lateinit var playerView:PlayerView
+    private lateinit var player:SimpleExoPlayer
 
     //URL of channel(s): Testing URL
     private val videoURL:String = "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
@@ -49,7 +50,7 @@ class VideoActivity : Activity() {
             //Set Media Controller
             //val mediaController = MediaController(this)~
             //mediaController.setAnchorView(videoView)~
-            val player = SimpleExoPlayer.Builder(this).build()
+            player = SimpleExoPlayer.Builder(this).build()
 
             //Url to Uri
             val videoUri:Uri = Uri.parse(videoURL)
@@ -87,6 +88,12 @@ class VideoActivity : Activity() {
         catch (e:Exception) {
             println("Error: "+e)
         }
+    }
+
+    //Release all video resources on close/exit
+    override fun onDestroy() {
+        super.onDestroy()
+        player.release()
     }
 
 }

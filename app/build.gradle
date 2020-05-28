@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "com.example.mykingdomappv100"
         minSdkVersion 23
-        targetSdkVersion 'R'
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
@@ -37,7 +37,13 @@ android {
 
 }
 
+repositories {
+    google()
+    jcenter()
+}
+
 dependencies {
+    implementation 'com.google.android.exoplayer:exoplayer:2.11.4'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'

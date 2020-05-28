@@ -5,14 +5,9 @@ import android.graphics.PixelFormat
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.MediaController
-import android.widget.Toast
-import androidx.annotation.Nullable
 import android.widget.VideoView
-import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.live_video_player.*
-import java.lang.Exception
 
 class VideoActivity : Activity() {
 
@@ -21,6 +16,8 @@ class VideoActivity : Activity() {
 
     //URL of channel(s): Testing URL
     private val videoURL:String = "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
+    //Testing for
+    //private val videoURL:String = "https://law.duke.edu/cspd/contest/videos/Framed-Contest_Documentaries-and-You.mp4"
 
     //Add Progressbar!
 
@@ -38,21 +35,23 @@ class VideoActivity : Activity() {
     private fun playVideo() {
         try {
             getWindow().setFormat(PixelFormat.TRANSLUCENT)
+
+            //Set Media Controller
             val mediaController = MediaController(this)
             mediaController.setAnchorView(videoView)
-
             //Url to Uri
             val videoUri:Uri = Uri.parse(videoURL)
             //Set Media Controllerto videoview
             vidView.setMediaController(mediaController)
             //Set video uri
             vidView.setVideoURI(videoUri)
+
             vidView.requestFocus()
             vidView.setOnPreparedListener(MediaPlayer.OnPreparedListener {
                 @Override
                 fun onPrepared(mp:MediaPlayer) {
                     //Start to play video
-                    vidView.start()
+                    mp.start()
                 }
             })
         }

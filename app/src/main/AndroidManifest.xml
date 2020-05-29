@@ -4,6 +4,7 @@
     package="com.example.mykingdomappv100">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.intent.action.VIEW_PERMISSION_USAGE"/>
 
     <application

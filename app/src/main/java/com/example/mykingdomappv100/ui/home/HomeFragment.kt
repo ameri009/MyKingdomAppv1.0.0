@@ -1,8 +1,10 @@
 package com.example.mykingdomappv100.ui.home
 
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -33,12 +35,30 @@ class HomeFragment : Fragment(), View.OnClickListener {
         //Button in Home
         val vidButton: Button = root.findViewById<Button>(R.id.videoButton)
         vidButton.setOnClickListener(this)
+        buttonEffect(vidButton)
         return root
     }
     //Activity button does on click
     override fun onClick(view: View) {
         val intent = Intent(context, VideoActivity::class.java)
         startActivity(intent)
+    }
+
+    //For making a click effect on the button when click
+    fun buttonEffect(button: View) {
+        button.setOnTouchListener { v, event ->
+            when (event.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    v.background.setColorFilter(-0x1f0b8adf, PorterDuff.Mode.SRC_ATOP)
+                    v.invalidate()
+                }
+                MotionEvent.ACTION_UP -> {
+                    v.background.clearColorFilter()
+                    v.invalidate()
+                }
+            }
+            false
+        }
     }
 
 }

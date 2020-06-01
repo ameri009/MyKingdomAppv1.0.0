@@ -64,6 +64,12 @@ class VideoActivity : Activity() {
         }
     }
 
+    //To pause video when changing app
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        player.setPlayWhenReady(false)
+    }
+
     //Release all video resources on close/exit
     override fun onDestroy() {
         super.onDestroy()

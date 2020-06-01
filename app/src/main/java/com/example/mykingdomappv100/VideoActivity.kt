@@ -5,9 +5,12 @@ import android.graphics.PixelFormat
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import com.google.android.exoplayer2.Player
+import com.google.android.exoplayer2.Player.DefaultEventListener
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.source.hls.HlsMediaSource
+import com.google.android.exoplayer2.ui.PlayerControlView
 import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
@@ -58,6 +61,32 @@ class VideoActivity : Activity() {
                 .createMediaSource(videoUri)
             // Prepare the player with the source.
             player.prepare(videoSource)
+
+            //Listener for when controller shows up
+            /*playerView.setControllerVisibilityListener { PlayerControlView.VISIBLE
+                window.decorView.systemUiVisibility = showSystemBars()
+            }*/
+
+            //Adding listener for when playing, pausing, and in-between
+            player.addListener(object : DefaultEventListener() {
+                override fun onPlayerStateChanged(
+                    playWhenReady: Boolean,
+                    playbackState: Int
+                ) {
+                    if (playWhenReady && playbackState == Player.STATE_READY) {
+                        // media actually playing
+                        window.decorView.systemUiVisibility = hideSystemBars()
+                    } else if (playWhenReady) {
+                        // might be idle (plays after prepare()),
+                        // buffering (plays when data available)
+                        // or ended (plays when seek away from end)
+                    } else {
+                        // player paused in any state
+                        println("PAUSEPAUSEPAUSE")
+                        window.decorView.systemUiVisibility = showSystemBars()
+                    }
+                }
+            })
         }
         catch (e:Exception) {
             println("Error: "+e)
@@ -76,6 +105,14 @@ class VideoActivity : Activity() {
         player.release()
     }
 
+    //Flags to show navigation and status bar
+    private fun showSystemBars():Int {
+        return View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
+                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+    }
+
     //Flags to hide navigation and status bar
     private fun hideSystemBars():Int {
         return View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
@@ -87,8 +124,10 @@ class VideoActivity : Activity() {
     }
 
     //When resuming
-    override fun onResume() {
+    /*override fun onResume() {
         super.onResume()
-        getWindow().getDecorView().setSystemUiVisibility(hideSystemBars())
-    }
+        window.decorView.apply {
+            systemUiVisibility = hideSystemBars()
+        }
+    }*/
 }

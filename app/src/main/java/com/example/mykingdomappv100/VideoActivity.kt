@@ -5,12 +5,11 @@ import android.graphics.PixelFormat
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.Player.DefaultEventListener
 import com.google.android.exoplayer2.SimpleExoPlayer
-import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.source.hls.HlsMediaSource
-import com.google.android.exoplayer2.ui.PlayerControlView
 import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
@@ -24,7 +23,7 @@ class VideoActivity : Activity() {
     private lateinit var player:SimpleExoPlayer
 
     //URL of channel(s): Testing URL
-    private val videoURL:String = "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
+    private val videoURL:String = "http://vcp1.myplaytv.com:1935/tvepaco/tvepaco/chunklist_w2066471963.m3u8"
 
     //Add Progressbar!
 
@@ -37,6 +36,10 @@ class VideoActivity : Activity() {
 
         //Video Play
         playVideo()
+
+        //Back button
+        val backButton: Button = findViewById<Button>(R.id.backButton)
+        backButton.setOnClickListener(View.OnClickListener { this.finish() })
     }
 
     private fun playVideo() {
@@ -50,22 +53,17 @@ class VideoActivity : Activity() {
             val videoUri:Uri = Uri.parse(videoURL)
             //Set Media Controllerto videoview
             playerView.setPlayer(player)
-
+            playerView.hideController()
             // Produces DataSource instances through which media data is loaded.
             val dataSourceFactory: DataSource.Factory = DefaultDataSourceFactory(
                 this,
-                Util.getUserAgent(this, "MyKindomApp")
+                Util.getUserAgent(this, "MyKingdomApp")
             )
             // This is the MediaSource representing the media to be played.
-            val videoSource: MediaSource = HlsMediaSource.Factory(dataSourceFactory)
+            val videoSource: HlsMediaSource = HlsMediaSource.Factory(dataSourceFactory)
                 .createMediaSource(videoUri)
             // Prepare the player with the source.
             player.prepare(videoSource)
-
-            //Listener for when controller shows up
-            /*playerView.setControllerVisibilityListener { PlayerControlView.VISIBLE
-                window.decorView.systemUiVisibility = showSystemBars()
-            }*/
 
             //Adding listener for when playing, pausing, and in-between
             player.addListener(object : DefaultEventListener() {
@@ -82,7 +80,9 @@ class VideoActivity : Activity() {
                         // or ended (plays when seek away from end)
                     } else {
                         // player paused in any state
-                        println("PAUSEPAUSEPAUSE")
+                        //Automatically play
+                        //So never pause
+                        player.setPlayWhenReady(true)
                         window.decorView.systemUiVisibility = showSystemBars()
                     }
                 }
@@ -93,16 +93,16 @@ class VideoActivity : Activity() {
         }
     }
 
-    //To pause video when changing app
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        player.setPlayWhenReady(false)
+    //Back to home when app in background
+    override fun onStop() {
+        finish()
+        super.onStop()
     }
 
     //Release all video resources on close/exit
     override fun onDestroy() {
-        super.onDestroy()
         player.release()
+        super.onDestroy()
     }
 
     //Flags to show navigation and status bar
@@ -122,12 +122,4 @@ class VideoActivity : Activity() {
                 View.SYSTEM_UI_FLAG_FULLSCREEN or
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
     }
-
-    //When resuming
-    /*override fun onResume() {
-        super.onResume()
-        window.decorView.apply {
-            systemUiVisibility = hideSystemBars()
-        }
-    }*/
 }

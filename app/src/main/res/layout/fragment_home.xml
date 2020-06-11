@@ -25,8 +25,8 @@
         android:id="@+id/videoButton"
         android:layout_width="99dp"
         android:layout_height="106dp"
-        android:text="Demo
-        Movie"
+        android:text="VEPACO
+        TV"
         android:background="@drawable/ic_tv_black_24dp"
         app:layout_constraintBottom_toTopOf="@+id/text_home"
         app:layout_constraintEnd_toEndOf="parent"

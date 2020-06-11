@@ -1,13 +1,13 @@
-package com.example.mykingdomappv100.ui.settings
+package com.Zopherus.mykingdomappv100.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SettingsViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "To add settings here later"
+        value = "Where all channels display!"
     }
     val text: LiveData<String> = _text
 }

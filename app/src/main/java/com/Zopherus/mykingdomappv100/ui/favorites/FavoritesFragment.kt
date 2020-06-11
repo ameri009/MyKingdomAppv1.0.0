@@ -1,4 +1,4 @@
-package com.example.mykingdomappv100.ui.favorites
+package com.Zopherus.mykingdomappv100.ui.favorites
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.mykingdomappv100.R
+import com.Zopherus.mykingdomappv100.R
 
 class FavoritesFragment : Fragment() {
 

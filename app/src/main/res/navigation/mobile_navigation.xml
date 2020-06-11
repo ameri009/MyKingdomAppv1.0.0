@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.mykingdomappv100.ui.home.HomeFragment"
+        android:name="com.Zopherus.mykingdomappv100.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_favorites"
-        android:name="com.example.mykingdomappv100.ui.favorites.FavoritesFragment"
+        android:name="com.Zopherus.mykingdomappv100.ui.favorites.FavoritesFragment"
         android:label="@string/title_favorites"
         tools:layout="@layout/fragment_favorites" />
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.example.mykingdomappv100.ui.settings.SettingsFragment"
+        android:name="com.Zopherus.mykingdomappv100.ui.settings.SettingsFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>

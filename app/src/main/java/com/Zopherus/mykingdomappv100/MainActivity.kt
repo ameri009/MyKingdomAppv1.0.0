@@ -1,4 +1,4 @@
-package com.example.mykingdomappv100
+package com.Zopherus.mykingdomappv100
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView

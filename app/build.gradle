@@ -7,7 +7,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.example.mykingdomappv100"
+        applicationId "com.Zopherus.mykingdomappv100"
         minSdkVersion 23
         targetSdkVersion 29
         versionCode 2

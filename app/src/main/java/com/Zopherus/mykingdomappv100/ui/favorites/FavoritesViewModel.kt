@@ -1,4 +1,4 @@
-package com.example.mykingdomappv100.ui.favorites
+package com.Zopherus.mykingdomappv100.ui.favorites
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

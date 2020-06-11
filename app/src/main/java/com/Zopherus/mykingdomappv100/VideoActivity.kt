@@ -1,4 +1,4 @@
-package com.example.mykingdomappv100
+package com.Zopherus.mykingdomappv100
 
 import android.app.Activity
 import android.graphics.PixelFormat

@@ -15,6 +15,7 @@ import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
 
+const val CHANNEL_URL = "channelurl"
 
 class VideoActivity : Activity() {
 
@@ -22,14 +23,17 @@ class VideoActivity : Activity() {
     private lateinit var playerView:PlayerView
     private lateinit var player:SimpleExoPlayer
 
-    //URL of channel(s): Testing URL
-    private val videoURL:String = "http://vcp1.myplaytv.com:1935/tvepaco/tvepaco/chunklist_w2066471963.m3u8"
+    //URL of channel(s): Testing URL X
+    private lateinit var videoURL:String
 
     //Add Progressbar!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.live_video_player)
+
+        //Get video URL
+        videoURL = intent.getStringExtra(CHANNEL_URL)
 
         //Player view
         playerView = findViewById(R.id.playerView)
@@ -53,7 +57,7 @@ class VideoActivity : Activity() {
             val videoUri:Uri = Uri.parse(videoURL)
             //Set Media Controllerto videoview
             playerView.setPlayer(player)
-            playerView.hideController()
+
             // Produces DataSource instances through which media data is loaded.
             val dataSourceFactory: DataSource.Factory = DefaultDataSourceFactory(
                 this,

@@ -15,6 +15,13 @@ import androidx.lifecycle.ViewModelProviders
 import com.Zopherus.mykingdomappv100.R
 import com.Zopherus.mykingdomappv100.VideoActivity
 
+//Channel URL pass code
+const val CHANNEL_URL = "channelurl"
+
+//Channel URLs
+const val TVO_URL = "http://vcp1.myplaytv.com:1935/tvo/tvo/chunklist_w2075785741.m3u8"
+const val VEPACO_URL = "http://vcp1.myplaytv.com:1935/tvepaco/tvepaco/chunklist_w2066471963.m3u8"
+
 class HomeFragment : Fragment(), View.OnClickListener {
 
     private lateinit var homeViewModel: HomeViewModel
@@ -31,15 +38,26 @@ class HomeFragment : Fragment(), View.OnClickListener {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
-        //Button in Home
+
+        //Button 1 VEPACO
         val vidButton: Button = root.findViewById<Button>(R.id.videoButton)
         vidButton.setOnClickListener(this)
         buttonEffect(vidButton)
+
+        //Button 2 TVO
+        val vidButton2: Button = root.findViewById<Button>(R.id.videoButton2)
+        vidButton2.setOnClickListener(this)
+        buttonEffect(vidButton2)
+
         return root
     }
     //Activity button does on click
     override fun onClick(view: View) {
         val intent = Intent(context, VideoActivity::class.java)
+        when (view.id) {
+            R.id.videoButton -> {intent.putExtra(CHANNEL_URL, VEPACO_URL)}
+            R.id.videoButton2 -> {intent.putExtra(CHANNEL_URL, TVO_URL)}
+        }
         startActivity(intent)
     }
 

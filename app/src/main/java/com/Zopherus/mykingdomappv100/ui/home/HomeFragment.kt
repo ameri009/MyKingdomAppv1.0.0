@@ -8,9 +8,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.Zopherus.mykingdomappv100.R
 import com.Zopherus.mykingdomappv100.VideoActivity
@@ -18,7 +16,8 @@ import com.Zopherus.mykingdomappv100.VideoActivity
 //Channel URL pass code
 const val CHANNEL_URL = "channelurl"
 
-//Channel URLs
+/**Channel URLs**/
+const val CHANNEL_NUMBERS: Int = 5
 const val TVO_URL = "http://vcp1.myplaytv.com:1935/tvo/tvo/chunklist_w2075785741.m3u8"
 const val VEPACO_URL = "http://vcp1.myplaytv.com:1935/tvepaco/tvepaco/chunklist_w2066471963.m3u8"
 const val PROMAR_URL = "http://vcp1.myplaytv.com:1935/promar/promar/playlist.m3u8?"
@@ -50,6 +49,17 @@ const val UNICANAL_URL = "http://45.55.127.106/live/unicanal.m3u8?"
 const val UNO_TV_URL = "https://ooyalahd2-f.akamaihd.net/i/UnoTV01_delivery@122640/master.m3u8?"
 const val TELEMADRID = "http://telemadridhls-live.hls.adaptive.level3.net/telemadrid/telemadrid1/bitrate_1.m3u8"
 
+/**Button Array**/
+private val vidButtons = mutableListOf<Button>()
+private val BUTTON_IDS = arrayOf(
+    R.id.videoButton,
+    R.id.videoButton2,
+    R.id.videoButton3,
+    R.id.videoButton4,
+    R.id.videoButton5
+);
+
+
 class HomeFragment : Fragment(), View.OnClickListener {
 
     private lateinit var homeViewModel: HomeViewModel
@@ -62,20 +72,14 @@ class HomeFragment : Fragment(), View.OnClickListener {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
 
-        //Button 1 VEPACO
-        val vidButton: Button = root.findViewById<Button>(R.id.videoButton)
-        vidButton.setOnClickListener(this)
-        buttonEffect(vidButton)
+        for(id in BUTTON_IDS) {
+            val button = root.findViewById<Button>(id)
+            button.setOnClickListener(this)
+            buttonEffect(button)
+            vidButtons.add(button)
+        }
 
-        //Button 2 TVO
-        val vidButton2: Button = root.findViewById<Button>(R.id.videoButton2)
-        vidButton2.setOnClickListener(this)
-        buttonEffect(vidButton2)
 
         return root
     }
@@ -85,6 +89,10 @@ class HomeFragment : Fragment(), View.OnClickListener {
         when (view.id) {
             R.id.videoButton -> {intent.putExtra(CHANNEL_URL, VEPACO_URL)}
             R.id.videoButton2 -> {intent.putExtra(CHANNEL_URL, TVO_URL)}
+            R.id.videoButton3 -> {intent.putExtra(CHANNEL_URL, PROMAR_URL)}
+            R.id.videoButton4 -> {intent.putExtra(CHANNEL_URL, TELESUR_URL)}
+            R.id.videoButton5 -> {intent.putExtra(CHANNEL_URL, ALL_SPORTS_URL)}
+
         }
         startActivity(intent)
     }

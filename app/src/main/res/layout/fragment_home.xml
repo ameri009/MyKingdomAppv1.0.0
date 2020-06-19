@@ -6,46 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    
-    <!-- Button to watch live video -->
+    <!-- Button to watch other live video -->
+
     <Button
         android:id="@+id/videoButton"
-        android:layout_width="99dp"
-        android:layout_height="106dp"
+        android:layout_width="82dp"
+        android:layout_height="91dp"
         android:background="@drawable/ic_tv_black_24dp"
         android:text="VEPACO
         TV"
-        app:layout_constraintBottom_toTopOf="@+id/text_home"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintVertical_bias="0.025" />
 
-    <!-- Button to watch other live video -->
     <Button
         android:id="@+id/videoButton2"
-        android:layout_width="99dp"
-        android:layout_height="106dp"
+        android:layout_width="81dp"
+        android:layout_height="92dp"
         android:background="@drawable/ic_tv_black_24dp"
         android:text="TVO"
-        app:layout_constraintBottom_toTopOf="@+id/text_home"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.849"
+        app:layout_constraintHorizontal_bias="0.357"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.454" />
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/videoButton3"
+        android:layout_width="81dp"
+        android:layout_height="90dp"
+        android:background="@drawable/ic_tv_black_24dp"
+        android:text="PROMAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.654"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/videoButton4"
+        android:layout_width="81dp"
+        android:layout_height="90dp"
+        android:background="@drawable/ic_tv_black_24dp"
+        android:text="TELESUR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/videoButton5"
+        android:layout_width="81dp"
+        android:layout_height="90dp"
+        android:background="@drawable/ic_tv_black_24dp"
+        android:text="ALL_SPORTS"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.179" />
 </androidx.constraintlayout.widget.ConstraintLayout>

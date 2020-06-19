@@ -27,14 +27,14 @@ class HomeFragment : Fragment(), View.OnClickListener {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
+//TO-DO        val textView: TextView = root.findViewById(R.id.text_home)
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
+//            textView.text = it
         })
         //Button in Home
-        val vidButton: Button = root.findViewById<Button>(R.id.videoButton)
+/*        val vidButton: Button = root.findViewById<Button>(R.id.videoButton)
         vidButton.setOnClickListener(this)
-        buttonEffect(vidButton)
+        buttonEffect(vidButton) */
         return root
     }
     //Activity button does on click

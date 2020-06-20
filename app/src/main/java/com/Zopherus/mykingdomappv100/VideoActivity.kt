@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.Player.DefaultEventListener
 import com.google.android.exoplayer2.SimpleExoPlayer
@@ -16,6 +17,7 @@ import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
 
 const val CHANNEL_URL = "channelurl"
+const val CHANNEL_NAME = "channelname"
 
 class VideoActivity : Activity() {
 
@@ -34,6 +36,10 @@ class VideoActivity : Activity() {
 
         //Get video URL
         videoURL = intent.getStringExtra(CHANNEL_URL)
+
+        //Getting the channel name for title
+        val chName:TextView = findViewById<TextView>(R.id.channelName)
+        chName.setText(intent.getStringExtra(CHANNEL_NAME))
 
         //Player view
         playerView = findViewById(R.id.playerView)

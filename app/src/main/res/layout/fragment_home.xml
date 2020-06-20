@@ -13,8 +13,7 @@
         android:layout_width="82dp"
         android:layout_height="91dp"
         android:background="@drawable/ic_tv_black_24dp"
-        android:text="VEPACO
-        TV"
+        android:text="TVO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
@@ -27,7 +26,8 @@
         android:layout_width="81dp"
         android:layout_height="92dp"
         android:background="@drawable/ic_tv_black_24dp"
-        android:text="TVO"
+        android:text="VEPACO
+        TV"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.357"

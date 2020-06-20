@@ -15,39 +15,75 @@ import com.Zopherus.mykingdomappv100.VideoActivity
 
 //Channel URL pass code
 const val CHANNEL_URL = "channelurl"
+const val CHANNEL_NAME = "channelname"
+
+/**Channel Names**/
+private val channel_names = arrayOf(
+    "TVO",
+    "VEPACO",
+    "PROMAR",
+    "TELESUR",
+    "ALL SPORTS",
+    "AMERICA TV PERU",
+    "ANTIESTRESS",
+    "ACENTO TV",
+    "VOS TV",
+    "TV CANARIA",
+    "CDM PUERTO RICO",
+    "TELEVALENCIA",
+    "TV CHILE",
+    "CAMPUS TV",
+    "CANAL 12 COLOMBIA",
+    "OYE TV PANAMA",
+    "RCN HD",
+    "CANAL ANDALUCIA COCINA",
+    "REAL MADRID TV",
+    "SER TV",
+    "CANAL 11",
+    "TELECAFE",
+    "TELEENVIGADO",
+    "TELEFORMULA",
+    "TELEAMAZONAS",
+    "TELECARIBE",
+    "CANAL SUR",
+    "UNICANAL",
+    "UNO TV",
+    "TELEMADRID"
+)
 
 /**Channel URLs**/
-const val CHANNEL_NUMBERS: Int = 5
-const val TVO_URL = "http://vcp1.myplaytv.com:1935/tvo/tvo/chunklist_w2075785741.m3u8"
-const val VEPACO_URL = "http://vcp1.myplaytv.com:1935/tvepaco/tvepaco/chunklist_w2066471963.m3u8"
-const val PROMAR_URL = "http://vcp1.myplaytv.com:1935/promar/promar/playlist.m3u8?"
-const val TELESUR_URL = "https://d7g1ebft2592.cloudfront.net/mblivev3/hd/playlist.m3u8?"
-const val ALL_SPORTS_URL = "https://5cf4a2c2512a2.streamlock.net/dgrau/dgrau/chunklist.m3u8?"
-const val AMERICA_TV_PERU_URL = "http://cdn.miip.tv:8080/canada/123456/4252?"
-const val ANTIESTRESS_URL = "http://cdn.miip.tv:8080/canada/123456/3810?"
-const val ACENTO_TV_URL = "https://acentotv01.streamprolive.com/hls/live.m3u8?"
-const val VOS_TV_URL = "http://cdn.miip.tv:8080/canada/123456/177?"
-const val TV_CANARIA_URL = "http://streaming2.mad.idec.net/rtvcnet/rtvcnet.drb.smil/Playlist.m3u8"
-const val CDM_PUERTO_RICO = "https://59825a54e4454.streamlock.net:8443/marcos536/marcos536/playlist.m3u8?"
-const val TELEVALENCIA = "http://streaming.enetres.net/9E9557EFCEBB43A89CEC8FBD3C500247022/live.smil/.m3u8"
-const val TV_CHILE_URL = "http://p1.worldkast.com/ebenezertv2/ngrp:ebenezertv2_all/playlist.m3u8?"
-const val CAMPUS_TV_URL = "http://207.38.89.242:8080/live/17299/17299/3673.m3u8?"
-const val CANAL_12_COLOMBIA_URL = "http://207.38.89.242:8080/live/2993/2993/3673.ts?"
-const val OYE_TV_PANAMA_URL = "https://mdstrm.com/live-stream-playlist/5d88df173853e7072f3f953f.m3u8?"
-const val RCN_HD_URL = "http://cdn.miip.tv:8080/canada/123456/3569?"
-const val CANAL_ANDALUCIA_COCINA_URL = "https://593fa17dec176.streamlock.net//cscocina//cscocina.stream//playlist.m3u8"
-const val REAL_MADRID_TV_URL = "https://rmtvlive-lh.akamaihd.net/i/rmtv_1@154306/master.m3u8?"
-const val SER_TV_URL = "https://accionastream.com/live/sertv/playlist.m3u8?"
-const val CANAL_11_URL = "http://207.38.89.242:8080/live/2993/2993/3678.ts?"
-const val TELECAFE_URL = "http://cdn.miip.tv:8080/canada/123456/4246?"
-const val TELEENVIGADO_URL = "http://cdn.miip.tv:8080/canada/123456/4245?"
-const val TELEFORMULA_URL = "https://wms30.tecnoxia.com/radiof/abr_radioftele/playlist.m3u8?"
-const val TELEAMAZONAS_URL = "https://api.new.livestream.com/accounts/1359588/events/4428723/live.m3u8?"
-const val TELECARIBE_URL = "https://telecaribe-deportes.gcdn.anvato.net/hls/live/telecaribedeporteshd2/2196k/index.m3u8?"
-const val CANAL_SUR_URL = "https://cdnlive.shooowit.net/rtvalive/channelDVR.smil/master.m3u8"
-const val UNICANAL_URL = "http://45.55.127.106/live/unicanal.m3u8?"
-const val UNO_TV_URL = "https://ooyalahd2-f.akamaihd.net/i/UnoTV01_delivery@122640/master.m3u8?"
-const val TELEMADRID = "http://telemadridhls-live.hls.adaptive.level3.net/telemadrid/telemadrid1/bitrate_1.m3u8"
+private val channel_urls = arrayOf(
+    "http://vcp1.myplaytv.com:1935/tvo/tvo/chunklist_w2075785741.m3u8",
+    "http://vcp1.myplaytv.com:1935/tvepaco/tvepaco/chunklist_w2066471963.m3u8",
+    "http://vcp1.myplaytv.com:1935/promar/promar/playlist.m3u8?",
+    "https://d7g1ebft2592.cloudfront.net/mblivev3/hd/playlist.m3u8?",
+    "https://5cf4a2c2512a2.streamlock.net/dgrau/dgrau/chunklist.m3u8?",
+    "http://cdn.miip.tv:8080/canada/123456/4252?",
+    "http://cdn.miip.tv:8080/canada/123456/3810?",
+    "https://acentotv01.streamprolive.com/hls/live.m3u8?",
+    "http://cdn.miip.tv:8080/canada/123456/177?",
+    "http://streaming2.mad.idec.net/rtvcnet/rtvcnet.drb.smil/Playlist.m3u8",
+    "https://59825a54e4454.streamlock.net:8443/marcos536/marcos536/playlist.m3u8?",
+    "http://streaming.enetres.net/9E9557EFCEBB43A89CEC8FBD3C500247022/live.smil/.m3u8",
+    "http://p1.worldkast.com/ebenezertv2/ngrp:ebenezertv2_all/playlist.m3u8?",
+    "http://207.38.89.242:8080/live/17299/17299/3673.m3u8?",
+    "http://207.38.89.242:8080/live/2993/2993/3673.ts?",
+    "https://mdstrm.com/live-stream-playlist/5d88df173853e7072f3f953f.m3u8?",
+    "http://cdn.miip.tv:8080/canada/123456/3569?",
+    "https://593fa17dec176.streamlock.net//cscocina//cscocina.stream//playlist.m3u8",
+    "https://rmtvlive-lh.akamaihd.net/i/rmtv_1@154306/master.m3u8?",
+    "https://accionastream.com/live/sertv/playlist.m3u8?",
+    "http://207.38.89.242:8080/live/2993/2993/3678.ts?",
+    "http://cdn.miip.tv:8080/canada/123456/4246?",
+    "http://cdn.miip.tv:8080/canada/123456/4245?",
+    "https://wms30.tecnoxia.com/radiof/abr_radioftele/playlist.m3u8?",
+    "https://api.new.livestream.com/accounts/1359588/events/4428723/live.m3u8?",
+    "https://telecaribe-deportes.gcdn.anvato.net/hls/live/telecaribedeporteshd2/2196k/index.m3u8?",
+    "https://cdnlive.shooowit.net/rtvalive/channelDVR.smil/master.m3u8",
+    "http://45.55.127.106/live/unicanal.m3u8?",
+    "https://ooyalahd2-f.akamaihd.net/i/UnoTV01_delivery@122640/master.m3u8?",
+    "http://telemadridhls-live.hls.adaptive.level3.net/telemadrid/telemadrid1/bitrate_1.m3u8"
+)
 
 /**Button Array**/
 private val vidButtons = mutableListOf<Button>()
@@ -73,6 +109,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
 
+        //Implemeting all the buttos
         for(id in BUTTON_IDS) {
             val button = root.findViewById<Button>(id)
             button.setOnClickListener(this)
@@ -80,19 +117,18 @@ class HomeFragment : Fragment(), View.OnClickListener {
             vidButtons.add(button)
         }
 
-
         return root
     }
     //Activity button does on click
     override fun onClick(view: View) {
         val intent = Intent(context, VideoActivity::class.java)
-        when (view.id) {
-            R.id.videoButton -> {intent.putExtra(CHANNEL_URL, VEPACO_URL)}
-            R.id.videoButton2 -> {intent.putExtra(CHANNEL_URL, TVO_URL)}
-            R.id.videoButton3 -> {intent.putExtra(CHANNEL_URL, PROMAR_URL)}
-            R.id.videoButton4 -> {intent.putExtra(CHANNEL_URL, TELESUR_URL)}
-            R.id.videoButton5 -> {intent.putExtra(CHANNEL_URL, ALL_SPORTS_URL)}
-
+        var numb = 0
+        for (x in BUTTON_IDS) {
+            if (x == view.id) {
+                intent.putExtra(CHANNEL_URL, channel_urls[numb])
+                intent.putExtra(CHANNEL_NAME, channel_names[numb])
+            }
+            numb++
         }
         startActivity(intent)
     }

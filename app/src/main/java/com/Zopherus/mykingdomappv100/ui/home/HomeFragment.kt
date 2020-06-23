@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.Zopherus.mykingdomappv100.Channels
 import com.Zopherus.mykingdomappv100.R
 import com.Zopherus.mykingdomappv100.RecyclerViewAdapter
@@ -39,11 +40,13 @@ class HomeFragment : Fragment(), View.OnClickListener {
 /*        val vidButton: Button = root.findViewById<Button>(R.id.videoButton)
         vidButton.setOnClickListener(this)
         buttonEffect(vidButton) */
+        val recyView: RecyclerView = root.findViewById<RecyclerView>(R.id.recycler_view)
+
         val channelList = generateDummyList(30)
 
-        recycler_view.adapter = RecyclerViewAdapter(channelList)
-        recycler_view.layoutManager = LinearLayoutManager(context)
-        recycler_view.setHasFixedSize(true)
+        recyView.adapter = RecyclerViewAdapter(channelList)
+        recyView.layoutManager = LinearLayoutManager(context)
+        recyView.setHasFixedSize(true)
 
 
         return root

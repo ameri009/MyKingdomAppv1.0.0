@@ -5,7 +5,8 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize">
+    android:paddingTop="?attr/actionBarSize"
+    android:background="@drawable/mktv_trbg">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
@@ -32,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:navGraph="@navigation/mobile_navigation" />
-
+<!--
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="100dp"
@@ -44,5 +45,5 @@
         app:layout_constraintTop_toTopOf="@+id/nav_host_fragment"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/mktv_trbg" />
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>

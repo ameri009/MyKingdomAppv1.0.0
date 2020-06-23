@@ -38,7 +38,7 @@ class VideoActivity : Activity() {
         videoURL = intent.getStringExtra(CHANNEL_URL)
 
         //Getting the channel name for title
-        val chName:TextView = findViewById<TextView>(R.id.channelName)
+        val chName:TextView = findViewById<TextView>(R.id.channelTitle)
         chName.setText(intent.getStringExtra(CHANNEL_NAME))
 
         //Player view

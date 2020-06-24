@@ -19,79 +19,45 @@ import com.Zopherus.mykingdomappv100.VideoActivity
 const val CHANNEL_URL = "channelurl"
 const val CHANNEL_NAME = "channelname"
 
-/**Channel Names**/
-private val channel_names = arrayOf(
-    "TVO",
-    "VEPACO",
-    "PROMAR",
-    "TELESUR",
-    "ALL SPORTS",
-    "AMERICA TV PERU",
-    "ANTIESTRESS",
-    "ACENTO TV",
-    "VOS TV",
-    "TV CANARIA",
-    "CDM PUERTO RICO",
-    "TELEVALENCIA",
-    "TV CHILE",
-    "CAMPUS TV",
-    "CANAL 12 COLOMBIA",
-    "OYE TV PANAMA",
-    "RCN HD",
-    "CANAL ANDALUCIA COCINA",
-    "REAL MADRID TV",
-    "SER TV",
-    "CANAL 11",
-    "TELECAFE",
-    "TELEENVIGADO",
-    "TELEFORMULA",
-    "TELEAMAZONAS",
-    "TELECARIBE",
-    "CANAL SUR",
-    "UNICANAL",
-    "UNO TV",
-    "TELEMADRID"
-)
-
-/**Channel URLs**/
-private val channel_urls = arrayOf(
-    "http://vcp1.myplaytv.com:1935/tvo/tvo/chunklist_w2075785741.m3u8",
-    "http://vcp1.myplaytv.com:1935/tvepaco/tvepaco/chunklist_w2066471963.m3u8",
-    "http://vcp1.myplaytv.com:1935/promar/promar/playlist.m3u8?",
-    "https://d7g1ebft2592.cloudfront.net/mblivev3/hd/playlist.m3u8?",
-    "https://5cf4a2c2512a2.streamlock.net/dgrau/dgrau/chunklist.m3u8?",
-    "http://cdn.miip.tv:8080/canada/123456/4252?",
-    "http://cdn.miip.tv:8080/canada/123456/3810?",
-    "https://acentotv01.streamprolive.com/hls/live.m3u8?",
-    "http://cdn.miip.tv:8080/canada/123456/177?",
-    "http://streaming2.mad.idec.net/rtvcnet/rtvcnet.drb.smil/Playlist.m3u8",
-    "https://59825a54e4454.streamlock.net:8443/marcos536/marcos536/playlist.m3u8?",
-    "http://streaming.enetres.net/9E9557EFCEBB43A89CEC8FBD3C500247022/live.smil/.m3u8",
-    "http://p1.worldkast.com/ebenezertv2/ngrp:ebenezertv2_all/playlist.m3u8?",
-    "http://207.38.89.242:8080/live/17299/17299/3673.m3u8?",
-    "http://207.38.89.242:8080/live/2993/2993/3673.ts?",
-    "https://mdstrm.com/live-stream-playlist/5d88df173853e7072f3f953f.m3u8?",
-    "http://cdn.miip.tv:8080/canada/123456/3569?",
-    "https://593fa17dec176.streamlock.net//cscocina//cscocina.stream//playlist.m3u8",
-    "https://rmtvlive-lh.akamaihd.net/i/rmtv_1@154306/master.m3u8?",
-    "https://accionastream.com/live/sertv/playlist.m3u8?",
-    "http://207.38.89.242:8080/live/2993/2993/3678.ts?",
-    "http://cdn.miip.tv:8080/canada/123456/4246?",
-    "http://cdn.miip.tv:8080/canada/123456/4245?",
-    "https://wms30.tecnoxia.com/radiof/abr_radioftele/playlist.m3u8?",
-    "https://api.new.livestream.com/accounts/1359588/events/4428723/live.m3u8?",
-    "https://telecaribe-deportes.gcdn.anvato.net/hls/live/telecaribedeporteshd2/2196k/index.m3u8?",
-    "https://cdnlive.shooowit.net/rtvalive/channelDVR.smil/master.m3u8",
-    "http://45.55.127.106/live/unicanal.m3u8?",
-    "https://ooyalahd2-f.akamaihd.net/i/UnoTV01_delivery@122640/master.m3u8?",
-    "http://telemadridhls-live.hls.adaptive.level3.net/telemadrid/telemadrid1/bitrate_1.m3u8"
+/**Channel Names & URLS**/
+private val channel_names_urls = arrayOf(
+    arrayOf("TVO", "http://vcp1.myplaytv.com:1935/tvo/tvo/chunklist_w2075785741.m3u8"),                         //Work
+    arrayOf("VEPACO", "http://vcp1.myplaytv.com:1935/tvepaco/tvepaco/chunklist_w2066471963.m3u8"),              //Work
+    arrayOf("PROMAR","http://vcp1.myplaytv.com:1935/promar/promar/playlist.m3u8?"),                             //Work
+    arrayOf("TELESUR", "https://d7g1ebft2592.cloudfront.net/mblivev3/hd/playlist.m3u8?"),                       //Work
+    arrayOf("ALL SPORTS", "https://5cf4a2c2512a2.streamlock.net/dgrau/dgrau/chunklist.m3u8?"),                  //Work
+    arrayOf("AMERICA TV PERU", "http://cdn.miip.tv:8080/canada/123456/4252?"),                                  //Not Work
+    arrayOf("ANTIESTRESS", "http://cdn.miip.tv:8080/canada/123456/3810?"),                                      //Not Work
+    arrayOf("ACENTO TV", "https://acentotv01.streamprolive.com/hls/live.m3u8?"),                                //Work
+    arrayOf("VOS TV", "http://cdn.miip.tv:8080/canada/123456/177?"),                                            //Not Work
+    arrayOf("TV CANARIA", "http://streaming2.mad.idec.net/rtvcnet/rtvcnet.drb.smil/Playlist.m3u8"),             //Work
+    arrayOf("CDM PUERTO RICO", "https://59825a54e4454.streamlock.net:8443/marcos536/marcos536/playlist.m3u8?"), //Work
+    arrayOf("TELEVALENCIA", "http://streaming.enetres.net/9E9557EFCEBB43A89CEC8FBD3C500247022/live.smil/.m3u8"),//Not Work?
+    arrayOf("TV CHILE", "http://p1.worldkast.com/ebenezertv2/ngrp:ebenezertv2_all/playlist.m3u8?"),             //Work
+    arrayOf("CAMPUS TV", "http://207.38.89.242:8080/live/17299/17299/3673.m3u8?"),                              //Fail to connect
+    arrayOf("CANAL 12 COLOMBIA", "http://207.38.89.242:8080/live/2993/2993/3673.ts?"),                          //Fail to connect
+    arrayOf("OYE TV PANAMA", "https://mdstrm.com/live-stream-playlist/5d88df173853e7072f3f953f.m3u8?"),         //Work
+    arrayOf("RCN HD", "http://cdn.miip.tv:8080/canada/123456/3569?"),                                           //Not Work
+    arrayOf("CANAL ANDALUCIA COCINA", "https://593fa17dec176.streamlock.net//cscocina//cscocina.stream//playlist.m3u8"),    //Work
+    arrayOf("REAL MADRID TV", "https://rmtvlive-lh.akamaihd.net/i/rmtv_1@154306/master.m3u8?"),                 //Work
+    arrayOf("SER TV", "https://accionastream.com/live/sertv/playlist.m3u8?"),                                   //Work
+    arrayOf("CANAL 11", "http://207.38.89.242:8080/live/2993/2993/3678.ts?"),                                   //Fail to connect
+    arrayOf("TELECAFE", "http://cdn.miip.tv:8080/canada/123456/4246?"),                                         //Not Work
+    arrayOf("TELEENVIGADO", "http://cdn.miip.tv:8080/canada/123456/4245?"),                                     //Not Work
+    arrayOf("TELEFORMULA", "https://wms30.tecnoxia.com/radiof/abr_radioftele/playlist.m3u8?"),                  //Work
+    arrayOf("TELEAMAZONAS", "https://api.new.livestream.com/accounts/1359588/events/4428723/live.m3u8?"),       //Not Work?
+    arrayOf("TELECARIBE", "https://telecaribe-deportes.gcdn.anvato.net/hls/live/telecaribedeporteshd2/2196k/index.m3u8?"),  //Work
+    arrayOf("CANAL SUR", "https://cdnlive.shooowit.net/rtvalive/channelDVR.smil/master.m3u8"),                  //Work
+    arrayOf("UNICANAL", "http://45.55.127.106/live/unicanal.m3u8?"),                                            //Works: Takes a while to load
+    arrayOf("UNO TV", "https://ooyalahd2-f.akamaihd.net/i/UnoTV01_delivery@122640/master.m3u8?"),               //Video
+    arrayOf("TELEMADRID", "http://telemadridhls-live.hls.adaptive.level3.net/telemadrid/telemadrid1/bitrate_1.m3u8")        //Works
 )
 
 class HomeFragment : Fragment(), RecyclerViewAdapter.OnChannelListener {
 
     private lateinit var homeViewModel: HomeViewModel
 
-    private val channelList = generateChannelList(channel_names.size)
+    private val channelList = generateChannelList(channel_names_urls.size)
     private lateinit var recyView:RecyclerView
     private val adapter = RecyclerViewAdapter(channelList, this)
 
@@ -132,7 +98,7 @@ class HomeFragment : Fragment(), RecyclerViewAdapter.OnChannelListener {
                 else -> R.drawable.ic_tv_black_24dp
             }
 
-            val item = Channels(drawable, channel_names[i], channel_urls[i])
+            val item = Channels(drawable, channel_names_urls[i][0], channel_names_urls[i][1])
             list += item
         }
         return list

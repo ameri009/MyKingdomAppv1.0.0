@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.Player.DefaultEventListener
 import com.google.android.exoplayer2.SimpleExoPlayer
@@ -15,6 +16,8 @@ import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
 
+const val CHANNEL_URL = "channelurl"
+const val CHANNEL_NAME = "channelname"
 
 class VideoActivity : Activity() {
 
@@ -23,7 +26,7 @@ class VideoActivity : Activity() {
     private lateinit var player:SimpleExoPlayer
 
     //URL of channel(s): Testing URL
-    private val videoURL:String = "http://vcp1.myplaytv.com:1935/tvepaco/tvepaco/chunklist_w2066471963.m3u8"
+    private lateinit var videoURL:String
 
     //Add Progressbar!
 
@@ -33,6 +36,13 @@ class VideoActivity : Activity() {
 
         //Player view
         playerView = findViewById(R.id.playerView)
+
+        //Get video URL
+        videoURL = intent.getStringExtra(CHANNEL_URL)
+
+        //Getting the channel name for title
+        val chName: TextView = findViewById<TextView>(R.id.channelTitle)
+        chName.setText(intent.getStringExtra(CHANNEL_NAME))
 
         //Video Play
         playVideo()

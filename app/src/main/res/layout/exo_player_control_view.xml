@@ -26,11 +26,11 @@
             app:layout_constraintVertical_bias="0.516" />
 
         <TextView
-            android:id="@+id/channelName"
+            android:id="@+id/channelTitle"
             android:layout_width="wrap_content"
             android:layout_height="31dp"
             android:backgroundTint="#000000"
-            android:text="Vepaco TV"
+            android:text=" "
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold"

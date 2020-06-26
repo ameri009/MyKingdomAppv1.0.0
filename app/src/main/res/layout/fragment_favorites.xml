@@ -7,6 +7,28 @@
     android:paddingBottom="?attr/actionBarSize"
     tools:context=".ui.favorites.FavoritesFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/home_toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:text="Favorite"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
     <TextView
         android:id="@+id/text_dashboard"
         android:layout_width="match_parent"

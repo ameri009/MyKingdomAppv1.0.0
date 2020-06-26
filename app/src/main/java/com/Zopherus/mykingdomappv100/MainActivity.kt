@@ -26,5 +26,10 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        //Hiding defult action bar (set action bar to just display logo)
+        //getSupportActionBar()?.setDisplayShowHomeEnabled(true)
+        //getSupportActionBar()?.setIcon(R.drawable.mktv_trbg)
+        getSupportActionBar()?.hide()
     }
 }

@@ -18,18 +18,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/channel_item" />
-    <!-- Button to watch live video -->
-    <!--
-    <Button
-        android:id="@+id/videoButton"
-        android:layout_width="99dp"
-        android:layout_height="106dp"
-        android:background="@drawable/ic_tv_black_24dp"
-        android:text="VEPACO
-        TV"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    -->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

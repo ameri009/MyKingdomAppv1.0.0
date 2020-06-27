@@ -15,6 +15,7 @@
 
         <ImageView
             android:id="@+id/channelIconBorder"
+            android:contentDescription="@string/none"
             android:alpha="0.25"
             android:layout_width="60dp"
             android:layout_height="match_parent"
@@ -25,6 +26,8 @@
 
         <ImageView
             android:id="@+id/image_view"
+            android:contentDescription="@string/none"
+            android:background="@color/colorTrueWhite"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerVertical="true"
@@ -32,6 +35,17 @@
             android:src="@drawable/ic_dashboard_black_24dp"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/cardPlayButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:alpha="0.9"
+            android:contentDescription="@string/none"
+            android:src="@drawable/ic_play_circle_24"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -43,9 +57,9 @@
             android:fontFamily="sans-serif"
             android:shadowDx="2"
             android:shadowDy="2"
-            android:text="Line 1"
+            android:text="@string/Line_1"
             android:textColor="@color/colorMidnightBlue"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             card_view:layout_constraintStart_toEndOf="@+id/image_view"
             card_view:layout_constraintTop_toTopOf="parent" />
@@ -57,10 +71,11 @@
             android:layout_below="@id/channelName_view"
             android:layout_marginTop="4dp"
             android:layout_toEndOf="@id/image_view"
-            android:text="Line 2"
+            android:text="@string/Line_2"
             android:visibility="invisible"
             card_view:layout_constraintTop_toBottomOf="@+id/channelName_view"
             tools:layout_editor_absoluteX="9dp" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -22,7 +22,7 @@ const val CHANNEL_URL = "channelurl"
 const val CHANNEL_NAME = "channelname"
 
 //Investor
-val invest = arrayOf("VEPACO", "http://vcp1.myplaytv.com:1935/tvepaco/tvepaco/chunklist_w2066471963.m3u8", R.drawable.vepacotv)
+val invest = arrayOf("VEPACO TV", "http://vcp1.myplaytv.com:1935/tvepaco/tvepaco/chunklist_w2066471963.m3u8", R.drawable.vepacotv)
 
 /**Channel Names & URLS**/
 private val channel_names_urls = arrayOf(
@@ -30,26 +30,26 @@ private val channel_names_urls = arrayOf(
     arrayOf("PROMAR","http://vcp1.myplaytv.com:1935/promar/promar/playlist.m3u8?", R.drawable.promar),                                  //Work
     arrayOf("TELESUR", "https://d7g1ebft2592.cloudfront.net/mblivev3/hd/playlist.m3u8?", R.drawable.telesur),                           //Work
     arrayOf("SPORTV", "https://5cf4a2c2512a2.streamlock.net/dgrau/dgrau/chunklist.m3u8?", R.drawable.sportv),                           //Work
-    // arrayOf("PROMAR","http://vcp1.myplaytv.com:1935/promar/promar/playlist.m3u8?", R.drawable.promar),                                  //Duplicate
-    // arrayOf("TELESUR", "https://d7g1ebft2592.cloudfront.net/mblivev3/hd/playlist.m3u8?", R.drawable.telesur),                           //Duplicate
+    arrayOf("PROMAR","http://vcp1.myplaytv.com:1935/promar/promar/playlist.m3u8?", R.drawable.promar),                                  //Duplicate
+    arrayOf("VEPACO TV", "http://vcp1.myplaytv.com:1935/tvepaco/tvepaco/chunklist_w2066471963.m3u8", R.drawable.vepacotv),              //Duplicate
     arrayOf("ACENTO TV", "https://acentotv01.streamprolive.com/hls/live.m3u8?", R.drawable.acentotv),                                   //Work
-    // arrayOf("SPORTV", "https://5cf4a2c2512a2.streamlock.net/dgrau/dgrau/chunklist.m3u8?", R.drawable.sportv),                           //Duplicate
+    arrayOf("SPORTV", "https://5cf4a2c2512a2.streamlock.net/dgrau/dgrau/chunklist.m3u8?", R.drawable.sportv),                           //Duplicate
     arrayOf("TV CANARIA", "http://streaming2.mad.idec.net/rtvcnet/rtvcnet.drb.smil/Playlist.m3u8", R.drawable.tvcanaria),               //Work
     arrayOf("CDM PUERTO RICO", "https://59825a54e4454.streamlock.net:8443/marcos536/marcos536/playlist.m3u8?", R.drawable.cdmtv),       //Work
-    // arrayOf("ACENTO TV", "https://acentotv01.streamprolive.com/hls/live.m3u8?", R.drawable.acentotv),                                   //Duplicate
+    arrayOf("ACENTO TV", "https://acentotv01.streamprolive.com/hls/live.m3u8?", R.drawable.acentotv),                                   //Duplicate
     arrayOf("TV CHILE", "http://p1.worldkast.com/ebenezertv2/ngrp:ebenezertv2_all/playlist.m3u8?", R.drawable.tvchile),                 //Work
-    // arrayOf("TV CANARIA", "http://streaming2.mad.idec.net/rtvcnet/rtvcnet.drb.smil/Playlist.m3u8", R.drawable.tvcanaria),               //Duplicate
-    // arrayOf("CDM PUERTO RICO", "https://59825a54e4454.streamlock.net:8443/marcos536/marcos536/playlist.m3u8?", R.drawable.cdmtv),       //Duplicate
+    arrayOf("TV CANARIA", "http://streaming2.mad.idec.net/rtvcnet/rtvcnet.drb.smil/Playlist.m3u8", R.drawable.tvcanaria),               //Duplicate
+    arrayOf("CDM PUERTO RICO", "https://59825a54e4454.streamlock.net:8443/marcos536/marcos536/playlist.m3u8?", R.drawable.cdmtv),       //Duplicate
     arrayOf("OYE TV PANAMA", "https://mdstrm.com/live-stream-playlist/5d88df173853e7072f3f953f.m3u8?", R.drawable.oyetvpanama),         //Work
-    // arrayOf("TV CHILE", "http://p1.worldkast.com/ebenezertv2/ngrp:ebenezertv2_all/playlist.m3u8?", R.drawable.tvchile),                 //Duplicate
+    arrayOf("TV CHILE", "http://p1.worldkast.com/ebenezertv2/ngrp:ebenezertv2_all/playlist.m3u8?", R.drawable.tvchile),                 //Duplicate
     arrayOf("CANAL ANDALUCIA COCINA", "https://593fa17dec176.streamlock.net//cscocina//cscocina.stream//playlist.m3u8", R.drawable.canal_andalucia_cocina), //Work
     arrayOf("REAL MADRID TV", "https://rmtvlive-lh.akamaihd.net/i/rmtv_1@154306/master.m3u8?", R.drawable.real_madrid_tv),              //Work
     arrayOf("SER TV", "https://accionastream.com/live/sertv/playlist.m3u8?", R.drawable.sertv),                                         //Work
-    // arrayOf("OYE TV PANAMA", "https://mdstrm.com/live-stream-playlist/5d88df173853e7072f3f953f.m3u8?", R.drawable.oyetvpanama),         //Duplicate
-    // arrayOf("CANAL ANDALUCIA COCINA", "https://593fa17dec176.streamlock.net//cscocina//cscocina.stream//playlist.m3u8", R.drawable.canal_andalucia_cocina), //Duplicate
-    // arrayOf("REAL MADRID TV", "https://rmtvlive-lh.akamaihd.net/i/rmtv_1@154306/master.m3u8?", R.drawable.real_madrid_tv),              //Duplicate
+    arrayOf("OYE TV PANAMA", "https://mdstrm.com/live-stream-playlist/5d88df173853e7072f3f953f.m3u8?", R.drawable.oyetvpanama),         //Duplicate
+    arrayOf("CANAL ANDALUCIA COCINA", "https://593fa17dec176.streamlock.net//cscocina//cscocina.stream//playlist.m3u8", R.drawable.canal_andalucia_cocina), //Duplicate
+    arrayOf("REAL MADRID TV", "https://rmtvlive-lh.akamaihd.net/i/rmtv_1@154306/master.m3u8?", R.drawable.real_madrid_tv),              //Duplicate
     arrayOf("TELEFORMULA", "https://wms30.tecnoxia.com/radiof/abr_radioftele/playlist.m3u8?", R.drawable.teleformula),                  //Work
-    // arrayOf("SER TV", "https://accionastream.com/live/sertv/playlist.m3u8?", R.drawable.sertv),                                         //Duplicate
+    arrayOf("SER TV", "https://accionastream.com/live/sertv/playlist.m3u8?", R.drawable.sertv),                                         //Duplicate
     arrayOf("TELECARIBE", "https://telecaribe-deportes.gcdn.anvato.net/hls/live/telecaribedeporteshd2/2196k/index.m3u8?", R.drawable.telecaribe),           //Work
     arrayOf("CANAL SUR", "https://cdnlive.shooowit.net/rtvalive/channelDVR.smil/master.m3u8", R.drawable.canalsur),                     //Work
     arrayOf("UNICANAL", "http://45.55.127.106/live/unicanal.m3u8?", R.drawable.unicanal),                                               //Works: Takes a while to load

@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">MyKingdomAppv1.0.0</string>
+    <string name="none"></string>
+    <string name="Line_1">Line 1</string>
+    <string name="Line_2">Line 2</string>
     <string name="title_home">Home</string>
     <string name="title_favorites">Favorites</string>
     <string name="title_settings">Settings</string>

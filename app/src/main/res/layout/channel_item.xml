@@ -14,12 +14,21 @@
         android:padding="5dp">
 
         <ImageView
+            android:id="@+id/channelIconBorder"
+            android:alpha="0.25"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_crop_square_24"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
             android:id="@+id/image_view"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="4dp"
-            android:background="@color/colorFadedBlue"
             android:src="@drawable/ic_dashboard_black_24dp"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"

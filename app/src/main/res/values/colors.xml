@@ -3,7 +3,7 @@
     <color name="colorPrimary">#55A8DC</color>
     <color name="colorPrimaryDark">#4A74AE</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="colorFadedBlue">#FAFFFF</color>
+    <color name="colorTrueWhite">#FFFFFF</color>
     <color name="semiTransparentWhite">#40FFFFFF</color>
     <color name="semiTransparentBlack">#40000000</color>
     <color name="colorMidnightBlue">#003366</color>

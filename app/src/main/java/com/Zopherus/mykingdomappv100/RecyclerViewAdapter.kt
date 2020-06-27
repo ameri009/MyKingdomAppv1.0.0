@@ -1,6 +1,9 @@
 package com.Zopherus.mykingdomappv100
 
+import android.graphics.Color
+import android.graphics.PorterDuff
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -36,29 +39,33 @@ class RecyclerViewAdapter(private val channelList: ArrayList<Channels>, private 
         init {
             this.onChannelListener = onChannelListener
             itemView.setOnClickListener(this)
+            buttonEffect(itemView)
         }
         override fun onClick(v: View?) {
             onChannelListener.onChannelClick(adapterPosition)
         }
-    }
 
-    //For making a click effect on the button when click
-    /* TO DO
-    fun buttonEffect(button: View) {
-        button.setOnTouchListener { v, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    v.background.setColorFilter(-0x1f0b8adf, PorterDuff.Mode.SRC_ATOP)
-                    v.invalidate()
+        //For making a click effect on the button when click
+        fun buttonEffect(button: View) {
+            button.setOnTouchListener { v, event ->
+                when (event.action) {
+                    MotionEvent.ACTION_DOWN -> {
+                        v.background.setColorFilter(Color.LTGRAY, PorterDuff.Mode.SRC_ATOP)
+                        v.invalidate()
+                    }
+                    MotionEvent.ACTION_UP -> {
+                        v.background.clearColorFilter()
+                        v.invalidate()
+                    }
+                    MotionEvent.ACTION_CANCEL -> {
+                        v.background.clearColorFilter()
+                        v.invalidate()
+                    }
                 }
-                MotionEvent.ACTION_UP -> {
-                    v.background.clearColorFilter()
-                    v.invalidate()
-                }
+                false
             }
-            false
         }
-    } */
+    }
 
     public interface OnChannelListener {
         fun onChannelClick(position: Int)

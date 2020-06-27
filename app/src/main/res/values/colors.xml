@@ -9,4 +9,5 @@
     <color name="colorMidnightBlue">#003366</color>
     <color name="halfTransparent">#80FFFFFF</color>
     <color name="videoBackground">#000000</color>
+    <color name="white">#FFFFFF</color>
 </resources>

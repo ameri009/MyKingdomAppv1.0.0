@@ -26,5 +26,8 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        //Hide the default action bar
+        getSupportActionBar()?.hide()
     }
 }

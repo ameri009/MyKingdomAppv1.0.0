@@ -55,9 +55,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
-            android:textSize="24sp"
-            android:textStyle="bold"
+            android:text="My Kingdom TV"
             android:textColor="@color/white"
-            android:text="My Kingdom TV"/>
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:shadowDx="4"
+            android:shadowDy="4"/>
     </androidx.appcompat.widget.Toolbar>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,7 +36,7 @@ private val channel_names_urls = arrayOf(
     arrayOf("SPORTV", "https://5cf4a2c2512a2.streamlock.net/dgrau/dgrau/chunklist.m3u8?", R.drawable.sportv),                           //Duplicate
     arrayOf("TV CANARIA", "http://streaming2.mad.idec.net/rtvcnet/rtvcnet.drb.smil/Playlist.m3u8", R.drawable.tvcanaria),               //Work
     arrayOf("CDM PUERTO RICO", "https://59825a54e4454.streamlock.net:8443/marcos536/marcos536/playlist.m3u8?", R.drawable.cdmtv),       //Work
-    arrayOf("ACENTO TV", "https://acentotv01.streamprolive.com/hls/live.m3u8?", R.drawable.acentotv),                                   //Duplicate
+    arrayOf("TLT", "https://vcp.myplaytv.com/TLTve2/TLTve2/playlist.m3u8", R.drawable.tlt),                                             //TLT
     arrayOf("TV CHILE", "http://p1.worldkast.com/ebenezertv2/ngrp:ebenezertv2_all/playlist.m3u8?", R.drawable.tvchile),                 //Work
     arrayOf("TV CANARIA", "http://streaming2.mad.idec.net/rtvcnet/rtvcnet.drb.smil/Playlist.m3u8", R.drawable.tvcanaria),               //Duplicate
     arrayOf("CDM PUERTO RICO", "https://59825a54e4454.streamlock.net:8443/marcos536/marcos536/playlist.m3u8?", R.drawable.cdmtv),       //Duplicate
@@ -46,7 +46,7 @@ private val channel_names_urls = arrayOf(
     arrayOf("REAL MADRID TV", "https://rmtvlive-lh.akamaihd.net/i/rmtv_1@154306/master.m3u8?", R.drawable.real_madrid_tv),              //Work
     arrayOf("SER TV", "https://accionastream.com/live/sertv/playlist.m3u8?", R.drawable.sertv),                                         //Work
     arrayOf("OYE TV PANAMA", "https://mdstrm.com/live-stream-playlist/5d88df173853e7072f3f953f.m3u8?", R.drawable.oyetvpanama),         //Duplicate
-    arrayOf("CANAL ANDALUCIA COCINA", "https://593fa17dec176.streamlock.net//cscocina//cscocina.stream//playlist.m3u8", R.drawable.canal_andalucia_cocina), //Duplicate
+    arrayOf("CANAL I", "https://vcp.myplaytv.com/canali/canali/playlist.m3u8", R.drawable.canali),                                      //Canal i
     arrayOf("REAL MADRID TV", "https://rmtvlive-lh.akamaihd.net/i/rmtv_1@154306/master.m3u8?", R.drawable.real_madrid_tv),              //Duplicate
     arrayOf("TELEFORMULA", "https://wms30.tecnoxia.com/radiof/abr_radioftele/playlist.m3u8?", R.drawable.teleformula),                  //Work
     arrayOf("SER TV", "https://accionastream.com/live/sertv/playlist.m3u8?", R.drawable.sertv),                                         //Duplicate

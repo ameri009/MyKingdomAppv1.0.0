@@ -44,12 +44,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/nav_host_fragment">
 
-        <ImageView
-            android:id="@+id/toolBarIcon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/boomplaylogo" />
-
         <TextView
             android:id="@+id/toolBarText"
             android:layout_width="wrap_content"
@@ -61,5 +55,12 @@
             android:textStyle="bold"
             android:shadowDx="4"
             android:shadowDy="4"/>
+
+        <ImageView
+            android:id="@+id/toolBarIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/boomplaylogo" />
+
     </androidx.appcompat.widget.Toolbar>
 </androidx.constraintlayout.widget.ConstraintLayout>

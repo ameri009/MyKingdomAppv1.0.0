@@ -1,6 +1,7 @@
 package com.Zopherus.mykingdomappv100.ui.settings
 
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,6 +36,7 @@ class SettingsFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         val toolBarTitle: TextView? = activity?.findViewById<TextView>(R.id.toolBarText)
+        toolBarTitle?.setTextSize(TypedValue.COMPLEX_UNIT_SP, 28F)
         toolBarTitle?.setText("Settings")
 
         val toolBarLogo: ImageView? = activity?.findViewById<ImageView>(R.id.toolBarIcon)

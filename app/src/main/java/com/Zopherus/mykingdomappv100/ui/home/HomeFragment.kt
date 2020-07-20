@@ -3,6 +3,7 @@ package com.Zopherus.mykingdomappv100.ui.home
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,7 @@ import com.Zopherus.mykingdomappv100.Channels
 import com.Zopherus.mykingdomappv100.R
 import com.Zopherus.mykingdomappv100.RecyclerViewAdapter
 import com.Zopherus.mykingdomappv100.VideoActivity
+import java.lang.reflect.TypeVariable
 
 //Channel URL pass code
 const val CHANNEL_URL = "channelurl"
@@ -85,7 +87,8 @@ class HomeFragment : Fragment(), RecyclerViewAdapter.OnChannelListener {
         super.onActivityCreated(savedInstanceState)
 
         val toolBarTitle: TextView? = activity?.findViewById<TextView>(R.id.toolBarText)
-        toolBarTitle?.setText("Boom Play")
+        toolBarTitle?.setTextSize(TypedValue.COMPLEX_UNIT_SP, 42F)
+        toolBarTitle?.setText("BOOM")
 
         val toolBarLogo: ImageView? = activity?.findViewById<ImageView>(R.id.toolBarIcon)
         toolBarLogo?.visibility = View.VISIBLE

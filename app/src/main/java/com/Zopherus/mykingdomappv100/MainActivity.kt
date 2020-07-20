@@ -1,5 +1,6 @@
 package com.Zopherus.mykingdomappv100
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -29,5 +30,8 @@ class MainActivity : AppCompatActivity() {
 
         //Hide the default action bar
         getSupportActionBar()?.hide()
+
+        val intent = Intent(this, AdVideoActivity::class.java)
+        startActivity(intent)
     }
 }

@@ -85,7 +85,7 @@ class HomeFragment : Fragment(), RecyclerViewAdapter.OnChannelListener {
         super.onActivityCreated(savedInstanceState)
 
         val toolBarTitle: TextView? = activity?.findViewById<TextView>(R.id.toolBarText)
-        toolBarTitle?.setText("My Kingdom TV")
+        toolBarTitle?.setText("BoomPlay")
 
         val toolBarLogo: ImageView? = activity?.findViewById<ImageView>(R.id.toolBarIcon)
         toolBarLogo?.visibility = View.VISIBLE

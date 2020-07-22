@@ -49,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
-            android:text="My Kingdom TV"
+            android:text="Boom Play"
             android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold"

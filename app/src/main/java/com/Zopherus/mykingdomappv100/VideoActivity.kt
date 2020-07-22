@@ -67,7 +67,7 @@ class VideoActivity : Activity() {
             // Produces DataSource instances through which media data is loaded.
             val dataSourceFactory: DataSource.Factory = DefaultDataSourceFactory(
                 this,
-                Util.getUserAgent(this, "MyKingdomApp")
+                Util.getUserAgent(this, "Boom Play")
             )
             // This is the MediaSource representing the media to be played.
             val videoSource: HlsMediaSource = HlsMediaSource.Factory(dataSourceFactory)

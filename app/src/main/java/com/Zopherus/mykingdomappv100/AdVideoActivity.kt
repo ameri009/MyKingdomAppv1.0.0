@@ -5,6 +5,7 @@ import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.widget.MediaController
 import android.widget.VideoView
 
@@ -12,8 +13,8 @@ class AdVideoActivity : Activity() {
 
     private lateinit var adPlayerView: VideoView
 
-    private var mCurrentPosition = 0
-    private val PLAYBACK_TIME = "play_time"
+    //Saving current state
+    private var mSavingPosition = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,13 +23,8 @@ class AdVideoActivity : Activity() {
         //The video player
         adPlayerView = findViewById(R.id.adPlayerView)
 
-        //Check for save state
-        if (savedInstanceState != null) {
-            mCurrentPosition = savedInstanceState.getInt(PLAYBACK_TIME);
-        }
-
         //Media Controller
-        val mediaController: MediaController = MediaController(this)
+        val mediaController = MediaController(this)
         adPlayerView.setMediaController(mediaController)
         mediaController.setAnchorView(adPlayerView)
 
@@ -43,11 +39,11 @@ class AdVideoActivity : Activity() {
         val uri:Uri = Uri.parse(videoPath)
         adPlayerView.setVideoURI(uri)
 
-        //Check where to play or continue playing
-        if (mCurrentPosition > 0) {
-            adPlayerView.seekTo(mCurrentPosition);
+        //Check where to play
+        if (mSavingPosition > 0) {
+            adPlayerView.seekTo(mSavingPosition);
         } else {
-            // Skipping to 1 shows the first frame of the video.
+            // Skipping to 1 shows the first frame of the video
             adPlayerView.seekTo(1);
         }
 
@@ -58,12 +54,6 @@ class AdVideoActivity : Activity() {
     //Release resources
     private fun releasePlayer() {
         adPlayerView.stopPlayback()
-    }
-
-    //To save state
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putInt(PLAYBACK_TIME, adPlayerView.getCurrentPosition())
     }
 
     //Start
@@ -81,7 +71,7 @@ class AdVideoActivity : Activity() {
     //Pause
     override fun onPause() {
         super.onPause()
-
+        mSavingPosition = adPlayerView.getCurrentPosition()
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
             adPlayerView.pause();
         }
@@ -93,6 +83,7 @@ class AdVideoActivity : Activity() {
         super.onDestroy()
     }
 
+    //For no skipping
     /*override fun onBackPressed() {
         //Do nothing
     }*/

@@ -31,7 +31,8 @@ class MainActivity : AppCompatActivity() {
         //Hide the default action bar
         getSupportActionBar()?.hide()
 
-        val intent = Intent(this, AdVideoActivity::class.java)
-        startActivity(intent)
+        //Ad video - Not used
+        //val intent = Intent(this, AdVideoActivity::class.java)
+        //startActivity(intent)
     }
 }

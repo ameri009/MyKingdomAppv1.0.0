@@ -35,7 +35,7 @@ class AdVideoActivity : Activity() {
     //Initializing player
     private fun initializePlayer() {
         //Uri
-        val videoPath:String = "android.resource://" + packageName + "/" + R.raw.boomplayad
+        val videoPath:String = "android.resource://" + packageName + "/"// Add the video here
         val uri:Uri = Uri.parse(videoPath)
         adPlayerView.setVideoURI(uri)
 

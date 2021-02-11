@@ -93,7 +93,7 @@ class VideoActivity : Activity() {
                         //Automatically play
                         //So never pause
                         player.setPlayWhenReady(true)
-                        window.decorView.systemUiVisibility = showSystemBars()
+                        //window.decorView.systemUiVisibility = showSystemBars()
                     }
                 }
             })

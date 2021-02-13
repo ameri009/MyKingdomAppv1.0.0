@@ -142,9 +142,11 @@ class VideoActivity : Activity() {
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         return when (keyCode) {
             KeyEvent.KEYCODE_DPAD_UP -> {
-                window.decorView.systemUiVisibility = showSystemBars()
                 playerView.showController()
-                Log.d("Show", "Show it up")
+                true
+            }
+            KeyEvent.KEYCODE_DPAD_DOWN -> {
+                playerView.hideController()
                 true
             }
             else -> super.onKeyUp(keyCode, event)

@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/videoTopBar"
         android:layout_width="match_parent"
         android:layout_height="62dp"
         android:background="#CC000000"
@@ -23,7 +24,21 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.516" />
+            app:layout_constraintVertical_bias="0.516"
+            android:layout_marginLeft="16dp">
+
+        </Button>
+
+        <ImageView
+            android:id="@+id/backButtonBackground"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/semiTransparentWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="14dp" />
 
         <TextView
             android:id="@+id/channelTitle"

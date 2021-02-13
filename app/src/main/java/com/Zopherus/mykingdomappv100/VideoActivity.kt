@@ -141,7 +141,7 @@ class VideoActivity : Activity() {
     //Handle key(dpad) events
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         return when (keyCode) {
-            KeyEvent.KEYCODE_DPAD_UP -> {
+            KeyEvent.KEYCODE_ENTER -> {
                 playerView.showController()
                 true
             }

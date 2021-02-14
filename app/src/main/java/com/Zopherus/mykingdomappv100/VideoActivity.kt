@@ -4,6 +4,8 @@ import android.app.Activity
 import android.graphics.PixelFormat
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
+import android.view.KeyEvent
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -49,7 +51,10 @@ class VideoActivity : Activity() {
 
         //Back button
         val backButton: Button = findViewById<Button>(R.id.backButton)
-        backButton.setOnClickListener(View.OnClickListener { this.finish() })
+        backButton.setOnClickListener(View.OnClickListener {
+            Log.d("BackButton", "Bye")
+            this.finish()
+        })
     }
 
     private fun playVideo() {
@@ -131,5 +136,20 @@ class VideoActivity : Activity() {
                 View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
                 View.SYSTEM_UI_FLAG_FULLSCREEN or
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+    }
+
+    //Handle key(dpad) events
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        return when (keyCode) {
+            KeyEvent.KEYCODE_ENTER -> {
+                playerView.showController()
+                true
+            }
+            KeyEvent.KEYCODE_DPAD_DOWN -> {
+                playerView.hideController()
+                true
+            }
+            else -> super.onKeyUp(keyCode, event)
+        }
     }
 }
